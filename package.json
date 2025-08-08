@@ -1,0 +1,27 @@
+{
+  "name": "desa-app-ec-web-foodour",
+  "version": "1.0.0",
+  "description": "IA foodour",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'Ejecuta npm run build en tu proyecto React/Vite'",
+    "serve": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "foodour",
+    "AI",
+    "restaurant",
+    "search"
+  ],
+  "author": "Walter Remache",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
