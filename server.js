@@ -23,26 +23,6 @@ app.use(express.static(path.join(__dirname, 'dist'), {
   }
 }));
 
-// Ruta de prueba para verificar que el servidor funciona
-app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
-    message: 'Servidor funcionando correctamente',
-    timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development'
-  });
-});
-
-// Ruta para obtener información del servidor
-app.get('/api/info', (req, res) => {
-  res.json({
-    server: 'Express.js',
-    version: '5.x',
-    port: PORT,
-    staticPath: path.join(__dirname, 'dist'),
-    uptime: process.uptime()
-  });
-});
 
 // Middleware para manejar todas las rutas de React Router (SPA)
 // Usar un patrón más específico para evitar el error de path-to-regexp en Express 5.x
@@ -91,8 +71,6 @@ app.use((req, res) => {
 // Iniciar el servidor
 app.listen(PORT, () => {
   console.log('🚀 Servidor Express iniciado correctamente');
-  console.log(`📍 Puerto: ${PORT}`);
-  console.log(`🌐 URL local: http://localhost:${PORT}`);
   console.log(`📁 Sirviendo archivos desde: ${path.join(__dirname, 'dist')}`);
   console.log(`⏰ Iniciado en: ${new Date().toLocaleString()}`);
   
